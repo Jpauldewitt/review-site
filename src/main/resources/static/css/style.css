@@ -1,0 +1,61 @@
+html {
+  margin: 0 auto;
+  max-width: 1000px;
+  margin-top: 1em;
+  font-family: "Courier New", Courier, monospace;
+}
+
+h1 {
+  padding: 1em;
+  background-color: blue;
+  color: white;
+  size: 20px;
+  max-width: 1000px;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  display: inline-block;
+  border-radius: 10em;
+}
+
+li {
+  display: inline-block;
+}
+
+.reviewImages {
+  position: relative;
+  width: 100%;
+}
+
+.reviewImages img {
+  display: block;
+  width: 200px;
+  height: auto;
+  padding: 1em;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 2s ease;
+  background-color: blue;
+}
+
+.reviewImages:hover .overlay {
+  opacity: 0.9;
+}
+
+.overlay h2 {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}

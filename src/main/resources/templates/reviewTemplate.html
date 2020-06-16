@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="/static/css/style2.css"
+            th:href="@{css/style2.css}"
+    />
+</head>
+<header>
+    <h1 th:text="${reviewModel.getItem()}"></h1>
+    <div class = category>
+        <h2 th:text="'Category: '+${reviewModel.getCategory()}"></h2>
+    </div>
+    <h3 th:text="'Type: '+ ${reviewModel.getCategoryInception()}"></h3>
+    <br>
+    <a href="/reviews"> Back to the list of all items!</a>
+    <br>
+</header>
+
+<main>
+    <body>
+    <img th:src="${reviewModel.getImageUrl()}">
+    <div class = positiveNegative>
+        <div class = positive>
+    <h2 th:text="${reviewModel.getPositives()}"></h2>
+        </div>
+        <div class = negative>
+    <h2 th:text="${reviewModel.getNegatives()}"></h2>
+        </div>
+    </div>
+    </table>
+    <p th:text="'Description: ' + ${reviewModel.getDescription()}"></p>
+    <p th:text="'Review: ' + ${reviewModel.getReviewSection()}">Review Section</p>
+</body>
+</main>
+<footer>
+    <small>&copy wcci 2020</small>
+</footer>
+</html>

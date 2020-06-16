@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/static/css/style.css"
+      th:href="@{css/style.css}"
+    />
+    <title>Jesse's Random Reviews</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        Jesse's Random Review Site
+      </h1>
+    </header>
+
+    <main>
+        <li th:each="review: ${reviewsModel}">
+          <div class = "reviewImages">
+          <a th:href="@{/review(id=${review.getId()})}">
+            <img th:src="${review.getImageUrl()}" />
+        </a>
+
+      <div class = "overlay">
+          <a th:href="@{/review(id=${review.getId()})}">
+            <h2 th:text="${review.getItem()}"></h2>
+          </a>
+      </div>
+          </div>
+
+      </li>
+    </main>
+
+    <footer>
+      <small>& copy wcci 2020</small>
+    </footer>
+  </body>
+</html>
